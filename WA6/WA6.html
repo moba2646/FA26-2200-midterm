@@ -8,14 +8,14 @@
       /* CSS Reset and Base Styles */
       :root {
         /* Color Palette - 5 Core Colors */
-        --color-primary: #3498db; /* Vibrant Blue - Main Brand Color */
-        --color-secondary: #2ecc71; /* Emerald Green - Complementary Action Color */
-        --color-accent: #e74c3c; /* Passionate Red - Highlight / Warning Color */
+        --color-primary: #2097c5; /* Vibrant Blue - Main Brand Color */
+        --color-secondary: #ed008c; /* Emerald Green - Complementary Action Color */
+        --color-accent: #e82030; /* Passionate Red - Highlight / Warning Color */
         --color-neutral: #34495e; /* Deep Slate Gray - Neutral Text and Background */
-        --color-highlight: #f1c40f; /* Bright Yellow - Accent / Attention Color */
+        --color-highlight: #f3d832; /* Bright Yellow - Accent / Attention Color */
 
         /* Derived Colors for Flexibility */
-        --color-background: color-mix(in srgb, var(--color-neutral) 10%, white);
+        --color-background: #3c4142;
         --color-text-dark: var(--color-neutral);
         --color-text-light: white;
 
@@ -61,14 +61,14 @@
         font-size: 3rem;
         font-weight: 700;
         margin-bottom: var(--spacing-md);
-        color: var(--color-primary);
+        color: white;
       }
 
       h2 {
         font-size: 2rem;
         font-weight: 600;
         margin-bottom: var(--spacing-md);
-        color: var(--color-secondary);
+        color: var(--color-primary);
       }
 
       h3 {
@@ -81,11 +81,12 @@
       .body-text {
         font-size: 1rem;
         margin-bottom: var(--spacing-md);
+        color: white;
       }
 
       .small-text {
         font-size: 0.75rem;
-        color: color-mix(in srgb, var(--color-text-dark) 70%, transparent);
+        color: white;
       }
 
       /* Color Palette Section */
@@ -110,8 +111,8 @@
       .button {
         display: inline-block;
         padding: var(--spacing-sm) var(--spacing-md);
-        background-color: var(--color-primary);
-        color: var(--color-text-light);
+        background-color: var(--color-highlight);
+        color: var(--color-text-dark);
         text-decoration: none;
         border-radius: var(--radius-sm);
         transition:
@@ -167,10 +168,14 @@
       rel="stylesheet"
     />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
     <div class="container">
       <h1>Design System Template</h1>
@@ -186,7 +191,7 @@
             "
           >
             <strong>Primary Color</strong>
-            <p>#3498db</p>
+            <p>#2097c5</p>
             <small>Contrast Ratio: 4.6:1</small>
           </div>
           <div
@@ -208,7 +213,7 @@
             "
           >
             <strong>Accent Color</strong>
-            <p>#e74c3c</p>
+            <p>#e82030</p>
             <small>Contrast Ratio: 4.5:1</small>
           </div>
           <div
@@ -230,7 +235,7 @@
             "
           >
             <strong>Highlight Color</strong>
-            <p>#f1c40f</p>
+            <p>#f3d832</p>
             <small>Contrast Ratio: 4.9:1</small>
           </div>
         </div>
@@ -260,13 +265,17 @@
           <div class="spacing-block" style="width: var(--spacing-lg)"></div>
           <div class="spacing-block" style="width: var(--spacing-xl)"></div>
         </div>
-        <p>Spacing blocks demonstrating size variations from xs to xl</p>
+        <p class="small-text">
+          Spacing blocks demonstrating size variations from xs to xl
+        </p>
       </section>
 
       <section>
         <h2>Interactive Components</h2>
         <a href="#" class="button">Primary Button</a>
-        <a href="#" class="link">Standard Link</a>
+        <a href="#" class="link" style="color: var(--color-primary)"
+          >Standard Link</a
+        >
         <a href="#" class="link" style="color: purple">Visited Link</a>
       </section>
     </div>
