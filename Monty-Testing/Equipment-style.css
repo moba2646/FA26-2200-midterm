@@ -1,0 +1,564 @@
+/* =========================================================
+   ATLAS BTU Lab redesign | style.css
+   1. Style guide (variables, reset, type, components)
+   2. Page layout + skip link + links
+   3. Nav bar
+   4. Home page
+   5. Equipment pages
+   6. Footer
+   ========================================================= */
+
+
+/* ---------- 1. STYLE GUIDE ---------- */
+
+:root {
+  /* Color Palette - 5 Core Colors */
+  --color-primary: #2097c5;   /* BTU Blue - Main Brand Color */
+  --color-secondary: #ed008c; /* ATLAS Pink - Complementary Action Color */
+  --color-accent: #e82030;    /* BTU Red - Highlight / Warning Color */
+  --color-neutral: #34495e;   /* Deep Slate Gray - Neutral Text and Background */
+  --color-highlight: #f3d832; /* BTU Yellow - Accent / Attention Color */
+
+  /* Derived Colors for Flexibility */
+  --color-background: #232323;
+  --color-text-dark: var(--color-neutral);
+  --color-text-light: white;
+
+  /* Text-safe link colors (AA contrast on --color-background) */
+  --color-link: #ff5cb8;          /* light pink, about 5.6:1 */
+  --color-link-visited: #c3a6ff;  /* light purple, about 7.6:1 */
+
+  /* Typography */
+  --font-primary:
+    "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-secondary: "Noto Serif", Serif;
+
+  /* Spacing System */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Side padding: 1rem on phones, centers a 1200px column on wide screens */
+  --page-gutter: max(var(--spacing-md), calc((100% - 1200px) / 2));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  background-color: var(--color-background);
+  color: var(--color-text-light);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Typography Styles */
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+  color: white;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-primary);
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-accent);
+}
+
+.body-text {
+  font-size: 1rem;
+  margin-bottom: var(--spacing-md);
+  color: white;
+}
+
+.small-text {
+  font-size: 0.75rem;
+  color: white;
+}
+
+/* Color Palette Section */
+.color-palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.color-swatch {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Component Styles */
+.button {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-highlight);
+  color: var(--color-text-dark);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s;
+  border: 2px solid transparent;
+}
+
+.button:hover {
+  background-color: color-mix(in srgb, var(--color-primary) 80%, black);
+  color: white; /* slate text was unreadable on the dark blue */
+  border-color: var(--color-secondary);
+  transform: scale(1.05);
+}
+
+.button:active {
+  transform: scale(0.95);
+  background-color: var(--color-secondary);
+  color: black;
+}
+
+.link {
+  color: var(--color-link);
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    text-decoration-color 0.3s;
+}
+
+.link:hover {
+  color: var(--color-highlight);
+  text-decoration: underline;
+  text-decoration-color: var(--color-highlight);
+}
+
+.link:visited {
+  color: var(--color-link-visited);
+}
+
+/* Spacing Demonstration */
+.spacing-demo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.spacing-block {
+  background-color: var(--color-primary);
+  height: 50px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .link {
+    transition: none;
+  }
+  .button:hover,
+  .button:active {
+    transform: none;
+  }
+}
+
+
+/* ---------- 2. PAGE LAYOUT, SKIP LINK, LINKS ---------- */
+
+main {
+  padding: var(--spacing-lg) var(--page-gutter);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+.skip-link:focus {
+  left: var(--spacing-md);
+  top: var(--spacing-md);
+  z-index: 200;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-highlight);
+  color: #000;
+}
+
+/* Body links (scoped so they don't override the nav) */
+main a,
+.site-footer a {
+  color: var(--color-link);
+}
+main a:visited,
+.site-footer a:visited {
+  color: var(--color-link-visited);
+}
+main a:hover,
+.site-footer a:hover {
+  color: var(--color-highlight);
+}
+
+
+/* ---------- 3. NAV BAR ---------- */
+
+/* Phone (400px): stacked accordion */
+.site-header {
+  background: #111;
+  color: var(--color-text-light);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  color: var(--color-text-light);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+.brand img {
+  display: block;
+  height: 48px;
+  width: auto;
+}
+
+.nav-list,
+.dropdown {
+  list-style: none;
+}
+
+/* each group sets its own accent color */
+.group-equipment { --accent: var(--color-primary); }
+.group-community { --accent: var(--color-accent); }
+.group-visiting  { --accent: var(--color-highlight); }
+
+.nav summary,
+.nav .dropdown a {
+  display: block;
+  padding: 0.9rem 1.25rem; /* 44px+ touch targets */
+  color: var(--color-text-light);
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav summary {
+  list-style: none;
+  border-left: 6px solid var(--accent);
+}
+.nav summary::-webkit-details-marker { display: none; } /* Safari */
+.nav summary::after { content: " ▾"; }
+.nav details[open] > summary::after { content: " ▴"; }
+
+.nav summary:hover,
+.nav details[open] > summary,
+.brand:hover {
+  background: #333;
+}
+
+.dropdown {
+  background: #1c1c1c;
+  border-left: 6px solid var(--accent);
+}
+.nav .dropdown a { padding-left: 2rem; } /* indent children on phone */
+.nav .dropdown a:hover {
+  background: #333;
+  box-shadow: inset 4px 0 0 var(--accent);
+}
+
+.brand:focus-visible,
+.nav summary:focus-visible,
+.nav .dropdown a:focus-visible {
+  outline: 3px solid var(--color-highlight);
+  outline-offset: -3px;
+}
+
+/* Laptop (1200px): brand left, nav right, floating dropdowns */
+@media (min-width: 768px) {
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .nav-list {
+    display: flex;
+    height: 100%;
+  }
+  .nav-list > li { position: relative; }
+
+  .nav summary {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-left: 0;
+    border-top: 5px solid var(--accent);
+    padding: 0.9rem 1.5rem;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0; /* keeps the last menu on-screen */
+    min-width: 15rem;
+    z-index: 100;
+    border-left: 0;
+    border-top: 5px solid var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  .nav .dropdown a { padding-left: 1.25rem; }
+}
+
+
+/* ---------- 4. HOME PAGE ---------- */
+
+.home-hero {
+  width: 100%;
+  height: clamp(220px, 40vw, 480px);
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.intro {
+  margin-block: var(--spacing-xl);
+}
+.intro p {
+  font-size: 1.25rem;
+  max-width: 65ch;
+}
+
+/* Phone: image on top, text below */
+.feature {
+  display: grid;
+  gap: var(--spacing-lg);
+  align-items: center;
+  margin-block: var(--spacing-xl);
+}
+.feature img {
+  width: 100%;
+  border-radius: var(--radius-md);
+}
+.feature p {
+  font-size: 1.125rem;
+  max-width: 60ch;
+}
+
+/* Section headings: one rule, color set per section */
+main h2 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  text-transform: uppercase;
+  color: var(--section-color, var(--color-primary));
+}
+.who   { --section-color: var(--color-primary); }
+.how   { --section-color: var(--color-accent); }
+.when  { --section-color: var(--color-highlight); }
+.what  { --section-color: var(--color-secondary); }
+.where { --section-color: var(--color-text-light); }
+
+address {
+  font-style: normal;
+  font-size: 1.125rem;
+}
+
+/* Laptop: two columns, alternating image side */
+@media (min-width: 768px) {
+  .feature {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  .feature--flip img { order: 2; }
+}
+
+
+/* ---------- 5. EQUIPMENT PAGES ---------- */
+
+/* Theme: sets the page accent color. The band uses dark text because
+   white on this blue is only about 3.3:1. Re-check contrast before
+   adding a red (Community) or yellow (Visiting) theme. */
+.theme-equipment { --page-accent: var(--color-primary); }
+
+/* Smaller, sentence-case headings than the home page */
+.equip-page h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  text-transform: none;
+  color: var(--color-text-light);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 3px solid var(--page-accent);
+}
+.equip-page h3 {
+  font-size: 1.25rem;
+  color: var(--color-text-light);
+}
+.equip-page section {
+  margin-block: var(--spacing-xl);
+}
+
+/* Colored title band (replaces the big hero image) */
+.page-band {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--page-accent);
+  color: #111;
+  border-radius: var(--radius-md);
+}
+.page-band h1 {
+  margin: 0;
+  color: #111;
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+
+/* Training badge: always text, never color alone */
+.badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Getting access callout */
+.access {
+  padding: var(--spacing-lg);
+  background: #1c1c1c;
+  border-left: 6px solid var(--page-accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+.access h2 {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.access p {
+  max-width: 60ch;
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Cards: used for "Who can use it" and "Equipment / Supplies" */
+.card-grid {
+  display: grid;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+.card {
+  padding: var(--spacing-lg);
+  background: #1c1c1c;
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 4px 0 var(--page-accent);
+}
+.card h3 {
+  margin-top: var(--spacing-sm);
+}
+.card ul {
+  padding-left: 1.25rem;
+  columns: 10rem;        /* long lists flow into 2 columns when there's room */
+  column-gap: var(--spacing-lg);
+}
+.card li {
+  break-inside: avoid;
+  margin-bottom: var(--spacing-xs);
+}
+.card li::marker {
+  color: var(--page-accent);
+}
+
+/* Policies accordion (Wood Shop, etc.) */
+.policies details {
+  border-bottom: 1px solid #444;
+}
+.policies summary {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) 0;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+.policies summary::-webkit-details-marker { display: none; }
+.policies summary::after {
+  content: "+";
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--page-accent);
+}
+.policies details[open] > summary::after { content: "−"; }
+.policies summary:focus-visible {
+  outline: 3px solid var(--color-highlight);
+  outline-offset: 2px;
+}
+.policy-body {
+  max-width: 65ch;
+  padding-bottom: var(--spacing-md);
+}
+.policy-body > * + * { margin-top: var(--spacing-sm); }
+.policy-body ul { padding-left: 1.25rem; }
+
+/* Buttons inside body content keep their own colors
+   (otherwise the body link rules turn them pink/purple) */
+main a.button,
+main a.button:visited {
+  color: var(--color-text-dark);
+}
+main a.button:hover {
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .card-grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .card-grid--3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+
+/* ---------- 6. FOOTER ---------- */
+
+.site-footer {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-xl) var(--page-gutter);
+  background: #111;
+  border-top: 5px solid;
+  border-image: linear-gradient(
+    to right,
+    var(--color-primary) 33.3%,
+    var(--color-accent) 33.3% 66.6%,
+    var(--color-highlight) 66.6%
+  ) 1;
+  font-size: 0.9375rem;
+}
+.site-footer p + p {
+  margin-top: var(--spacing-md);
+}
