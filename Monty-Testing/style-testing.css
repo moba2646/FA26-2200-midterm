@@ -46,8 +46,11 @@
   --radius-lg: 12px;
 
   /* Side padding: 1rem on phones, centers a 1200px column on wide screens */
-  --page-gutter: max(var(--spacing-md), calc((100% - 1200px) / 2));
+  /* --page-gutter: max(var(--spacing-md), calc((100% - 1200px) / 2)); */
+  --page-gutter: max(var(--spacing-md), );
 }
+
+
 
 * {
   margin: 0;
@@ -182,7 +185,7 @@ h3 {
   height: 50px;
 }
 
-@media (prefers-reduced-motion: reduce) {
+/* @media (prefers-reduced-motion: reduce) { */
   .button,
   .link {
     transition: none;
