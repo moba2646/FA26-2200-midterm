@@ -466,7 +466,15 @@ address {
 .page-band h1 {
   margin: 0;
   color: #111;
-  font-size: clamp(2rem, 6vw, 3rem);
+  /* font-size: clamp(2rem, 6vw, 3rem); */
+  font-size: 3rem;
+}
+
+.page-band-tools h1 {
+  margin: 0;
+  color: white;
+  /* font-size: clamp(2rem, 6vw, 3rem); */
+  font-size: 3rem;
 }
 
 /* Training badge: always text, never color alone */
