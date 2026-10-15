@@ -312,7 +312,7 @@ main a:hover,
 }
 
 /* Laptop (1200px): brand left, nav right, floating dropdowns */
-@media (min-width: 768px) {
+@media (min-width: 800px) {
   .site-header {
     display: flex;
     justify-content: space-between;
