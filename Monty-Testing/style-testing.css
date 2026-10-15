@@ -8,15 +8,14 @@
    6. Footer
    ========================================================= */
 
-
 /* ---------- 1. STYLE GUIDE ---------- */
 
 :root {
   /* Color Palette - 5 Core Colors */
-  --color-primary: #2097c5;   /* BTU Blue - Main Brand Color */
+  --color-primary: #2097c5; /* BTU Blue - Main Brand Color */
   --color-secondary: #ed008c; /* ATLAS Pink - Complementary Action Color */
-  --color-accent: #e82030;    /* BTU Red - Highlight / Warning Color */
-  --color-neutral: #34495e;   /* Deep Slate Gray - Neutral Text and Background */
+  --color-accent: #e82030; /* BTU Red - Highlight / Warning Color */
+  --color-neutral: #34495e; /* Deep Slate Gray - Neutral Text and Background */
   --color-highlight: #f3d832; /* BTU Yellow - Accent / Attention Color */
 
   /* Derived Colors for Flexibility */
@@ -25,8 +24,8 @@
   --color-text-light: white;
 
   /* Text-safe link colors (AA contrast on --color-background) */
-  --color-link: #ff5cb8;          /* light pink, about 5.6:1 */
-  --color-link-visited: #c3a6ff;  /* light purple, about 7.6:1 */
+  --color-link: #ff5cb8; /* light pink, about 5.6:1 */
+  --color-link-visited: #c3a6ff; /* light purple, about 7.6:1 */
 
   /* Typography */
   --font-primary:
@@ -193,7 +192,6 @@ h3 {
   }
 }
 
-
 /* ---------- 2. PAGE LAYOUT, SKIP LINK, LINKS ---------- */
 
 main {
@@ -227,7 +225,6 @@ main a:hover,
   color: var(--color-highlight);
 }
 
-
 /* ---------- 3. NAV BAR ---------- */
 
 /* Phone (400px): stacked accordion */
@@ -259,9 +256,15 @@ main a:hover,
 }
 
 /* each group sets its own accent color */
-.group-equipment { --accent: var(--color-primary); }
-.group-community { --accent: var(--color-accent); }
-.group-visiting  { --accent: var(--color-highlight); }
+.group-equipment {
+  --accent: var(--color-primary);
+}
+.group-community {
+  --accent: var(--color-accent);
+}
+.group-visiting {
+  --accent: var(--color-highlight);
+}
 
 .nav summary,
 .nav .dropdown a {
@@ -275,9 +278,15 @@ main a:hover,
   list-style: none;
   border-left: 6px solid var(--accent);
 }
-.nav summary::-webkit-details-marker { display: none; } /* Safari */
-.nav summary::after { content: " ▾"; }
-.nav details[open] > summary::after { content: " ▴"; }
+.nav summary::-webkit-details-marker {
+  display: none;
+} /* Safari */
+.nav summary::after {
+  content: " ▾";
+}
+.nav details[open] > summary::after {
+  content: " ▴";
+}
 
 .nav summary:hover,
 .nav details[open] > summary,
@@ -289,7 +298,9 @@ main a:hover,
   background: #1c1c1c;
   border-left: 6px solid var(--accent);
 }
-.nav .dropdown a { padding-left: 2rem; } /* indent children on phone */
+.nav .dropdown a {
+  padding-left: 2rem;
+} /* indent children on phone */
 .nav .dropdown a:hover {
   background: #333;
   box-shadow: inset 4px 0 0 var(--accent);
@@ -312,7 +323,9 @@ main a:hover,
     display: flex;
     height: 100%;
   }
-  .nav-list > li { position: relative; }
+  .nav-list > li {
+    position: relative;
+  }
 
   .nav summary {
     height: 100%;
@@ -333,9 +346,10 @@ main a:hover,
     border-top: 5px solid var(--accent);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   }
-  .nav .dropdown a { padding-left: 1.25rem; }
+  .nav .dropdown a {
+    padding-left: 1.25rem;
+  }
 }
-
 
 /* ---------- 4. HOME PAGE ---------- */
 
@@ -376,11 +390,21 @@ main h2 {
   text-transform: uppercase;
   color: var(--section-color, var(--color-primary));
 }
-.who   { --section-color: var(--color-primary); }
-.how   { --section-color: var(--color-accent); }
-.when  { --section-color: var(--color-highlight); }
-.what  { --section-color: var(--color-secondary); }
-.where { --section-color: var(--color-text-light); }
+.who {
+  --section-color: var(--color-primary);
+}
+.how {
+  --section-color: var(--color-accent);
+}
+.when {
+  --section-color: var(--color-highlight);
+}
+.what {
+  --section-color: var(--color-secondary);
+}
+.where {
+  --section-color: var(--color-text-light);
+}
 
 address {
   font-style: normal;
@@ -393,9 +417,10 @@ address {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
   }
-  .feature--flip img { order: 2; }
+  .feature--flip img {
+    order: 2;
+  }
 }
-
 
 /* ---------- 5. EQUIPMENT PAGES ---------- */
 
@@ -404,9 +429,10 @@ address {
   height: auto;
 }
 @media (min-width: 768px) {
-  .equip-hero { max-width: 50%; }
+  .equip-hero {
+    max-width: 50%;
+  }
 }
-
 
 /* ---------- 6. FOOTER ---------- */
 
@@ -416,11 +442,12 @@ address {
   background: #111;
   border-top: 5px solid;
   border-image: linear-gradient(
-    to right,
-    var(--color-primary) 33.3%,
-    var(--color-accent) 33.3% 66.6%,
-    var(--color-highlight) 66.6%
-  ) 1;
+      to right,
+      var(--color-primary) 33.3%,
+      var(--color-accent) 33.3% 66.6%,
+      var(--color-highlight) 66.6%
+    )
+    1;
   font-size: 0.9375rem;
 }
 .site-footer p + p {
