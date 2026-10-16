@@ -12,9 +12,13 @@
         flex-wrap: wrap;
         justify-content: center;
         margin: 10px;
-        border-top: 1rem solid var(--color-primary);
+        /* border-top: 1rem solid var(--color-primary);
         border-left: 1rem solid var(--color-accent);
-        border-right: 1rem solid var(--color-highlight);
+        border-right: 1rem solid var(--color-highlight); */
+        padding: 10%;
+        /* scale: auto; */
+        width: fill ;
+        height: auto;
       }
       .hero {
         justify-content: center;
@@ -22,6 +26,16 @@
         flex-wrap: wrap;
         margin-top: 2rem;
         padding-top: 2rem;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .hero img {
+        width: 100%;
+        height: auto;
       }
     </style>
   </head>
@@ -81,6 +95,7 @@
 
     <section class="hero">
       <h1>BTU Lab Calendar</h1>
+      <img src="/Assets/BTU-Calendar.png" >
     </section>
 
     <section class="calendar">
