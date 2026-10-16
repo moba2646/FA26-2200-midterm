@@ -24,6 +24,15 @@
   --color-text-dark: var(--color-neutral);
   --color-text-light: white;
 
+  /* Equipment Colors */
+  --color-tools: #38761d;
+  --color-woodshop: #e06666;
+  --color-sewing: #f1c232;
+  --color-electronics: #04b9d5;
+  --color-lasers: #ff0000;
+  --color-3dprinters: #9900ff;
+  --color-CNC: #0000ff;
+
   /* Text-safe link colors (AA contrast on --color-background) */
   --color-link: #ff5cb8;          /* light pink, about 5.6:1 */
   --color-link-visited: #c3a6ff;  /* light purple, about 7.6:1 */
@@ -412,6 +421,14 @@ address {
   padding-bottom: var(--spacing-sm);
   border-bottom: 3px solid var(--page-accent);
 }
+
+.equip-page-tools h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  text-transform: none;
+  color: var(--color-text-light);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 3px solid var(--page-tools);
+}
 .equip-page h3 {
   font-size: 1.25rem;
   color: var(--color-text-light);
@@ -421,17 +438,31 @@ address {
 }
 
 /* Colored title band (replaces the big hero image) */
-.page-band {
+.page-band-tools {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-md);
   padding: var(--spacing-lg);
-  background: var(--page-accent);
+  background: var(--color-tools);
   color: #111;
   border-radius: var(--radius-md);
 }
+
+.page-band-wood {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--color-woodshop);
+  color: #111;
+  border-radius: var(--radius-md);
+}
+
+
 .page-band h1 {
   margin: 0;
   color: #111;
@@ -544,7 +575,7 @@ main a.button:hover {
 }
 
 
-/* ---------- 6. FOOTER ---------- */
+/* 6. FOOTER */
 
 .site-footer {
   margin-top: var(--spacing-xl);
