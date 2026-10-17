@@ -7,36 +7,56 @@
     <link rel="stylesheet" href="../Monty-Testing/style-testing.css" />
 
     <style>
-      .calendar {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: 10px;
-        /* border-top: 1rem solid var(--color-primary);
-        border-left: 1rem solid var(--color-accent);
-        border-right: 1rem solid var(--color-highlight); */
-        padding: 10%;
-        /* scale: auto; */
-        width: fill ;
-        height: auto;
-      }
+
+
       .hero {
-        justify-content: center;
-        display: flex;
-        flex-wrap: wrap;
+        display:grid;
+        place-items: center;
         margin-top: 2rem;
-        padding-top: 2rem;
       }
 
-      .hero h1 {
-        font-size: 3rem;
-        display: flex;
-        flex-wrap: wrap;
+      .hero > * {
+        grid-area: 1 / 1;
       }
+
       .hero img {
         width: 100%;
         height: auto;
+        object-fit: cover;
       }
+
+      .hero h1 {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        padding: 0 var(--spacing-md);
+        font-size: clamp(2rem, 7vw, 4rem);
+        text-align: center;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7,);
+      }
+
+        .calendar {
+    --border: clamp(0.5rem, 2vw, 1rem);
+    width: min(100%, 1000px);
+    margin: var(--spacing-xl) auto;
+    padding: var(--spacing-sm);
+    border-style: solid;
+    border-width: var(--border);
+    border-top-color: var(--color-primary);
+    border-left-color: var(--color-accent);
+    border-right-color: var(--color-highlight);
+    border-bottom-color: var(--color-secondary);
+  }
+  .calendar iframe {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    min-height: 450px;
+    border: 0;
+  }
+
+
     </style>
   </head>
 
@@ -93,21 +113,27 @@
       </nav>
     </header>
 
-    <section class="hero">
-      <h1>BTU Lab Calendar</h1>
-      <img src="/Assets/BTU-Calendar.png" >
-    </section>
+<main id="main">
+  <section class="hero">
+    <h1>BTU Lab Calendar</h1>
+    <img src="../Assets/BTU-Calendar.png" alt="Man holding an animal" />
+  </section>
 
-    <section class="calendar">
-      <iframe
-        src="https://calendar.google.com/calendar/u/0/embed?color=%2392e1c0&color=%23cd74e6&color=%23f83a22&color=%23fad165&src=01c19e46b7d1df63b8c2bf86c13e9e8d4dd48407953069b76258fa20a9f6e946@group.calendar.google.com&src=1d4bdcc88938abd2d291838c548916abba1d14f79ad53e49a62b76c16d0ce4fc@group.calendar.google.com&src=917af08c35085b7a6203c14ddcfb9a84b26f31030114e022d423518e82d442e3@group.calendar.google.com&src=atlasbtulab@gmail.com"
-        style="border: 0"
-        width="800"
-        height="600"
-        frameborder="0"
-        scrolling="no"
-      >
-      </iframe>
-    </section>
+  <section class="calendar">
+    <iframe
+      title="BTU Lab Google Calendar"
+      src="https://calendar.google.com/calendar/u/0/embed?color=%2392e1c0&color=%23cd74e6&color=%23f83a22&color=%23fad165&src=01c19e46b7d1df63b8c2bf86c13e9e8d4dd48407953069b76258fa20a9f6e946@group.calendar.google.com&src=1d4bdcc88938abd2d291838c548916abba1d14f79ad53e49a62b76c16d0ce4fc@group.calendar.google.com&src=917af08c35085b7a6203c14ddcfb9a84b26f31030114e022d423518e82d442e3@group.calendar.google.com&src=atlasbtulab@gmail.com"
+    ></iframe>
+  </section>
+
+  <footer class="site-footer">
+    <p>
+      Materials: <strong>BTU LAB IS NOT A FREE SUPPLY STORE.</strong> But there are many ways to barter, including displaying your work in BTU, tagging us in social media, offering workshops, volunteering to organize supplies, and more. If you need something, we ask that you give something in return.
+    </p>
+    <p>
+      Note that this is not the official BTU website. This is a redesign project for CU Boulder's ATLS 2200 class.
+    </p>
+  </footer>
+</main>
   </body>
 </html>

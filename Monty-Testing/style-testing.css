@@ -23,6 +23,15 @@
   --color-text-dark: var(--color-neutral);
   --color-text-light: white;
 
+  /* Equipment Colors */
+  --color-tools: #38761d;
+  --color-woodshop: #e06666;
+  --color-sewing: #f1c232;
+  --color-electronics: #04b9d5;
+  --color-lasers: #ff0000;
+  --color-3dprinters: #9900ff;
+  --color-CNC: #0000ff;
+
   /* Text-safe link colors (AA contrast on --color-background) */
   --color-link: #ff5cb8; /* light pink, about 5.6:1 */
   --color-link-visited: #c3a6ff; /* light purple, about 7.6:1 */
@@ -193,7 +202,7 @@ h3 {
   .button:active {
     transform: none;
   }
-}
+
 
 /* ---------- 2. PAGE LAYOUT, SKIP LINK, LINKS ---------- */
 
@@ -256,6 +265,11 @@ main a:hover,
 .nav-list,
 .dropdown {
   list-style: none;
+}
+
+.rules-list {
+  list-style: circle;
+  padding-left: 1.5rem;
 }
 
 /* each group sets its own accent color */

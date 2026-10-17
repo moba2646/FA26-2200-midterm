@@ -427,7 +427,7 @@ address {
   text-transform: none;
   color: var(--color-text-light);
   padding-bottom: var(--spacing-sm);
-  border-bottom: 3px solid var(--page-tools);
+  border-bottom: 3px solid var(--page-accent);
 }
 .equip-page h3 {
   font-size: 1.25rem;

@@ -5,6 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BTU Calendar</title>
     <link rel="stylesheet" href="../Monty-Testing/style-testing.css" />
+
+    <style>
+  /* ---------- Hero: image with centered title ---------- */
+      .hero {
+        display: grid;
+        place-items: center;
+        margin-top: 2rem;
+      }
+      .hero > * { 
+        grid-area: 1 / 1; 
+      }
+      .hero img {
+        width: 100%;
+        height: clamp(200px, 40vw, 420px);
+        object-fit: cover;
+        filter: brightness(0.6);
+      }
+      .hero h1 {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        padding: 0 var(--spacing-md);
+        font-size: clamp(2.25rem, 7vw, 4rem);
+        text-align: center;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+      }
+ 
+      /* ---------- Rules ---------- */
+      .rules { max-width: 75rem; margin-inline: auto; }
+      .rules > h2 { font-size: clamp(2rem, 6vw, 3rem); text-transform: uppercase; }
+      .rules > p { max-width: 60ch; margin-bottom: var(--spacing-xl); color: #ddd; }
+ 
+      .rule-groups {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+        gap: var(--spacing-lg);
+      }
+      .rule-group {
+        padding: var(--spacing-lg);
+        background: #1c1c1c;
+        border-radius: var(--radius-md);
+        box-shadow: inset 0 5px 0 var(--group);
+      }
+      .rule-group h3 { color: var(--group); margin: var(--spacing-xs) 0 var(--spacing-md); }
+      .rule-group ul { padding-left: 1.25rem; max-width: 60ch; }
+      .rule-group li { margin-bottom: var(--spacing-sm); }
+      .rule-group li::marker { color: var(--group); }
+ 
+      .respect { --group: var(--color-primary); }
+      .safety  { --group: var(--color-accent); }
+      .cleanup { --group: var(--color-highlight); }
+      .stuff   { --group: var(--color-secondary); }
+ 
+      .closing {
+        margin-top: var(--spacing-xl);
+        padding: var(--spacing-lg);
+        border-left: 6px solid var(--color-highlight);
+        background: #1c1c1c;
+        font-size: 1.125rem;
+        max-width: 65ch;
+      }
+    </style>
   </head>
 
     <body>
@@ -60,36 +122,67 @@
       </nav>
     </header>
 
-    <section class="hero">
-      <h1>Lab Rules</h1>
-      <img src="/Assets/BTU-Rules.jpg" >
-    </section>
-
-    <section>
-        <h2>BE COOL*</h2>
-        <h3>How to be Cool</h3>
+ <main id="main">
+      <section class="hero">
+        <h1>Lab Rules</h1>
+        <img src="../Assets/BTU-Rules.jpg" alt="Students working in the BTU Lab" />
+      </section>
+ 
+      <section class="rules">
+        <h1>Be cool*</h1>
+        <p>*How to be cool: four habits that keep the BTU safe, clean, and welcoming.</p>
+ 
+        <div class="rule-groups">
+          <section class="rule-group respect">
+            <h3>Respect people</h3>
             <ul>
-                <li>Respect others, their space, and their work.</li>
-                <li>Observe safety for you, others, and equipment.</li>
-                <li>PLEASE...report problems with equipment.</li>
-                <li>Remember, using slang speech OR pop culture as an excuse for denigrating people identifying with a race, age group, gender, sexual orientation, physical ability, etc., is not for the BTU.</li>
-                <li>Report taking the last "____________". ex. Glue stick.</li>
-                <li>First ask approval to remove any tool or material from the lab.</li>
-                <li>Protect surfaces from hot glue, paint, marmots, etc.</li>
-                <li>Keep common work areas clear of your stuff, when you can.</li>
-                <li>Put things back where they belong, not just where you found them.</li>
-
-                <li>Let the staff know if anyone is not being cool.</li>
-                <li>Clear scraps of material on a common work area.</li>
-                <li>Sweep up scraps of material on the floor.</li>
-                <li>Keep it clean.</li>
-                <li>Use tools, materials and processes as intended, when appropriate (a.k.a get trained!).</li>
-                <li>Did we mention, "get trained"? That's why you're here!</li>
-                <li>Keep common work areas clear of your stuff, when you can.</li>
-                <li>Put things back where they belong, not just where you found them.</li>
-                <li>Leave out anything else, not listed here, that negatively affects the BTU, ATLAS, CU, and EARTH community. Please, do not make us make a rule.</li>
+              <li>Respect others, their space, and their work.</li>
+              <li>Remember, using slang speech OR pop culture as an excuse for denigrating people identifying with a race, age group, gender, sexual orientation, physical ability, etc., is not for the BTU.</li>
+              <li>Let the staff know if anyone is not being cool.</li>
             </ul>
-          </div>
+          </section>
+ 
+          <section class="rule-group safety">
+            <h3>Stay safe</h3>
+            <ul>
+              <li>Observe safety for you, others, and equipment.</li>
+              <li>PLEASE…report problems with equipment.</li>
+              <li>Use tools, materials and processes as intended, when appropriate (a.k.a. get trained!).</li>
+              <li>Did we mention, “get trained”? That’s why you’re here!</li>
+              <li>Protect surfaces from hot glue, paint, marmots, etc.</li>
+            </ul>
+          </section>
+ 
+          <section class="rule-group cleanup">
+            <h3>Clean up</h3>
+            <ul>
+              <li>Keep common work areas clear of your stuff, when you can.</li>
+              <li>Put things back where they belong, not just where you found them.</li>
+              <li>Clear scraps of material on a common work area.</li>
+              <li>Sweep up scraps of material on the floor.</li>
+              <li>Keep it clean.</li>
+            </ul>
+          </section>
+ 
+          <section class="rule-group stuff">
+            <h3>Tools and materials</h3>
+            <ul>
+              <li>Report taking the last “____________”. ex. Glue stick.</li>
+              <li>First ask approval to remove any tool or material from the lab.</li>
+            </ul>
+          </section>
+        </div>
+ 
+        <p class="closing">Leave out anything else, not listed here, that negatively affects the BTU, ATLAS, CU, and EARTH community. Please, do not make us make a rule.</p>
+      </section>
 
-
+      <footer class="site-footer">
+        <p>
+          Materials: <strong>BTU LAB IS NOT A FREE SUPPLY STORE.</strong> But there are many ways to barter, including displaying your work in BTU, tagging us in social media, offering workshops, volunteering to organize supplies, and more. If you need something, we ask that you give something in return.
+        </p>
+        <p>
+          Note that this is not the official BTU website. This is a redesign project for CU Boulder's ATLS 2200 class.
+        </p>
+      </footer>
+    </main>
     </body>
