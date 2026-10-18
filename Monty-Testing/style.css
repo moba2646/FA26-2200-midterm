@@ -579,17 +579,23 @@ address {
   display: flex;
   justify-content: space-between;
   gap: var(--spacing-md);
-  padding: var(--spacing-md) 0;
+  /* padding: var(--spacing-md) 0; */
   font-weight: 600;
   list-style: none;
   cursor: pointer;
+  font-size: 1.5rem;
+  border-bottom: solid var(--color-woodshop);
+  border: solid var(--color-woodshop);
+  margin: 0.25rem;
 }
+
 .policies summary::-webkit-details-marker { display: none; }
 .policies summary::after {
   content: "+";
   font-size: 1.5rem;
-  line-height: 1;
+  /* line-height: 1; */
   color: var(--page-accent);
+  padding-right: var(--spacing-lg);
 }
 .policies details[open] > summary::after { content: "−"; }
 .policies summary:focus-visible {
@@ -597,11 +603,19 @@ address {
   outline-offset: 2px;
 }
 .policy-body {
-  max-width: 65ch;
+  /* max-width: 65ch; */
   padding-bottom: var(--spacing-md);
 }
 .policy-body > * + * { margin-top: var(--spacing-sm); }
-.policy-body ul { padding-left: 1.25rem; }
+.policy-body ul { 
+  padding-left: 1.25rem; 
+  padding-bottom: 1.25rem;;
+}
+
+.policy-body ol { 
+  padding-left: 1.25rem;
+  padding-bottom: 1.25rem;
+}
 
 
 /* ---------- 6. RULES PAGE ---------- */

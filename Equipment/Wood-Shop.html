@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Woodshop | ATLAS BTU Lab</title>
-    <link rel="stylesheet" href="../Monty-Testing/Equipment-style.css">
+    <link rel="stylesheet" href="/Monty-Testing/style.css">
   </head>
 
   <body>
@@ -15,6 +15,9 @@
     <img src="../Assets/BTU-Logo.jpg" alt="" width="48" height="48">
     <span>ATLAS | BTU LAB</span>
   </a>
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Menu" />
+  <label for="nav-toggle" class="nav-toggle"></label>
 
   <nav class="nav" aria-label="Main">
     <ul class="nav-list">
@@ -58,32 +61,36 @@
   </nav>
     </header>
 
-    <main id="main" class="equip-page theme-equipment">
+    <main id="main" class="equip-page theme-woodshop">
 
       <!-- 1. TITLE BAND: colored by the page theme. Pick ONE badge (see notes at bottom). -->
-      <div class="page-band-wood">
-        <h1>Wood Shop</h1>
+      <div class="page-band">
+        <h1>WOODSHOP</h1>
         <p class="badge">Orientation required</p>
       </div>
 
       <!-- 2. IMAGE + DESCRIPTION: text on the left, image on the right at laptop width -->
       <section class="feature feature--flip">
-        <img src="../Assets/BTU-Woodshop-Img" alt="[Describe what the photo shows]" width="600" height="400">
+        <img src="/Assets/BTU-woodshop.jpg" alt="[Describe what the photo shows]" width="600" height="400">
         <div>
-          <h2>About the [equipment]</h2>
-          <p>[Two or three sentences: what it is and what people make with it.]</p>
+          <h2>The WOOD SHOP entrance is marked PINK.</h2>
+          <p>Inside, tools have their own color-coding system. You'll figure it out.</p>
+          <br>
+          <p>**FOR YOUR SAFETY, major equipment including table saw, band saw, belt sander, chop saw, and drill press are powered off between the hours of 10pm and 6am, daily.</p>
         </div>
       </section>
 
       <!-- 3. GETTING ACCESS: same block on every page, only the wording changes -->
       <section class="access">
         <h2>Getting access</h2>
-        <p>[Orientation required: say what the orientation covers, how long it takes, and that it's needed before using the equipment.]</p>
+        <p>Woodshop access is separate from general BTU access and Requires a scheduled orientation</p>
+        <h3>REGISTRATION IS REQUIRED</h3>
+        <p>The Wood Shop Orientation schedule can be found on the BTU Lab Calendar.</p>
         <a class="button" href="calendar.html">View orientation schedule</a>
       </section>
 
       <!-- 4. WHO CAN USE IT: identical structure on every page -->
-      <section>
+      <!-- <section>
         <h2>Who can use it</h2>
         <div class="card-grid card-grid--3">
           <div class="card">
@@ -99,53 +106,72 @@
             <p>[Community access details.]</p>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <!-- 5. EQUIPMENT AND SUPPLIES -->
       <section>
         <h2>Equipment and supplies</h2>
         <div class="card-grid card-grid--2">
           <div class="card">
-            <h3>Equipment</h3>
+            <h3>Power Tools</h3>
             <ul>
-              <li>[Item]</li>
-              <li>[Item]</li>
-              <li>[Item]</li>
+              <li>Table Saw**</li>
+              <li>Band Saw**</li>
+              <li>Drill Press**</li>
+              <li>Chop/Miter Saw**</li>
+              <li>Belt Sander**</li>
+              <li>Random Orbit Sander</li>
+              <li>Palm Router</li>
+              <li>Drills / Drivers</li>
+
             </ul>
           </div>
           <div class="card">
-            <h3>Supplies</h3>
+            <h3>Other Tools</h3>
             <ul>
-              <li>[Item]</li>
-              <li>[Item]</li>
-              <li>[Item]</li>
+              <li>Hand Saws</li>
+              <li>Files</li>
+              <li>Measuring Tools</li>
+              <li>Other hand tools</li>
+              <li>Oh, and so, so much more my friends!</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <!-- 6. POLICIES (OPTIONAL): delete this whole section on pages without policies.
-              One <details> per topic; add the "open" attribute to the first one if you like. -->
+      <!-- 6. POLICIES (Maybe) -->
       <section class="policies">
-        <h2>[Equipment name] policies</h2>
+        <h2>Woodshop policies (MUST READ)</h2>
+        <p><strong>**FOR YOUR SAFETY</strong>, major equipment including table saw, band saw, belt sander, chop saw, and drill press are powered off between the hours of 10pm and 6am, daily. Tampering with timers is considered a serious safety violation. Violation of any wood shop policy will result in loss of access to BTU Lab and the wood shop until both orientations are repeated.
+        </p>
 
         <details>
-          <summary>[Policy topic, e.g. Safety gear]</summary>
+          <summary>Policies</summary>
           <div class="policy-body">
-            <p>[Policy text.]</p>
+            <p><strong>Following the orientation, you may use the wood shop under the following conditions:</strong></p>
             <ul>
-              <li>[Rule]</li>
-              <li>[Rule]</li>
+              <li>Observe all safety rules without exception.</li>
+              <li>Do not work alone when no one could hear you if you needed assistance. Stay in earshot.</li>
+              <li>Do not operate any tool that you are unfamiliar with. Get assistance.</li>
+              <li>Do not alter any machine in a permanent way.</li>
+              <li>Do not remove any tools from the wood shop or BTU Lab without staff approval.</li>
+              <li>Do not attempt to repair a malfunctioning tool.</li>
+              <li>Report malfunctioning tools. It is okay when a tool breaks under normal circumstances. A malfunctioning machine can be dangerous if a problem isn't understood. We just want to know what happened to prevent any possible harm.</li>
+              <li>BTU Staff reserve the right to revoke wood shop access for any reason deemed necessary.</li>
+              <li>Deadlines, fatigue, and other lack of preparation do not justify ignoring any wood shop policy.</li>
+
+              <li>Multiple violations of wood shop policy, by one or more individuals, will result in reduced access for everyone including locking out machines or the entire space when staff are not available.</li>
+              
             </ul>
           </div>
         </details>
 
-        <details>
+        <!-- <details>
           <summary>[Policy topic, e.g. Cleanup]</summary>
           <div class="policy-body">
             <p>[Policy text.]</p>
           </div>
-        </details>
+        </details> -->
       </section>
 
     </main>
