@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Equipment name] | ATLAS BTU Lab</title>
+    <link rel="stylesheet" href="/Monty-Testing/style.css">
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+        <a class="brand" href="index.html" aria-current="page">
+    <img src="../Assets/BTU-Logo.jpg" alt="" width="48" height="48">
+    <span>ATLAS | BTU LAB</span>
+  </a>
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Menu" />
+  <label for="nav-toggle" class="nav-toggle"></label>
+
+  <nav class="nav" aria-label="Main">
+    <ul class="nav-list">
+      <li class="group-equipment">
+        <details name="nav-group">
+          <summary>Equipment</summary>
+          <ul class="dropdown">
+            <li><a href="Tools.html">Tools</a></li>
+            <li><a href="Wood-Shop.html">Wood Shop</a></li>
+            <li><a href="Sewing-Textiles.html">Sewing &amp; Textiles</a></li>
+            <li><a href="Electronics.html">Electronics</a></li>
+            <li><a href="Lasers.html">Lasers!</a></li>
+            <li><a href="3D-Printers.html">3D Printers</a></li>
+            <li><a href="CNC.html">CNC</a></li>
+          </ul>
+        </details>
+      </li>
+
+      <li class="group-community">
+        <details name="nav-group">
+          <summary>Community</summary>
+          <ul class="dropdown">
+            <li><a href="Mischief-Makers.html">BTU Mischief Makers</a></li>
+            <li><a href="Faculty.html">Faculty</a></li>
+            <li><a href="workshops.html">Workshops</a></li>
+            <li><a href="blow-things-up.html">Help Us Blow Things Up</a></li>
+          </ul>
+        </details>
+      </li>
+
+      <li class="group-visiting">
+        <details name="nav-group">
+          <summary>Visiting Info</summary>
+          <ul class="dropdown">
+            <li><a href="calendar.html">BTU Lab Calendar</a></li>
+            <li><a href="rules.html">Lab Rules &amp; Policies</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </nav>
+    </header>
+
+    <main id="main" class="equip-page theme-equipment">
+
+      <!-- 1. TITLE BAND: colored by the page theme. Pick ONE badge (see notes at bottom). -->
+      <div class="page-band">
+        <h1>[Equipment name]</h1>
+        <p class="badge">Orientation required</p>
+      </div>
+
+      <!-- 2. IMAGE + DESCRIPTION: text on the left, image on the right at laptop width -->
+      <section class="feature feature--flip">
+        <img src="[IMAGE LINK]" alt="[Describe what the photo shows]" width="600" height="400">
+        <div>
+          <h2>About the [equipment]</h2>
+          <p>[Two or three sentences: what it is and what people make with it.]</p>
+        </div>
+      </section>
+
+      <!-- 3. GETTING ACCESS: same block on every page, only the wording changes -->
+      <section class="access">
+        <h2>Getting access</h2>
+        <p>[Orientation required: say what the orientation covers, how long it takes, and that it's needed before using the equipment.]</p>
+        <a class="button" href="calendar.html">View orientation schedule</a>
+      </section>
+
+      <!-- 4. WHO CAN USE IT: identical structure on every page -->
+      <section>
+        <h2>Who can use it</h2>
+        <div class="card-grid card-grid--3">
+          <div class="card">
+            <h3>Faculty</h3>
+            <p>[Faculty access details.]</p>
+          </div>
+          <div class="card">
+            <h3>Students</h3>
+            <p>[Student access details.]</p>
+          </div>
+          <div class="card">
+            <h3>Everybody</h3>
+            <p>[Community access details.]</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. EQUIPMENT AND SUPPLIES -->
+      <section>
+        <h2>Equipment and supplies</h2>
+        <div class="card-grid card-grid--2">
+          <div class="card">
+            <h3>Equipment</h3>
+            <ul>
+              <li>[Item]</li>
+              <li>[Item]</li>
+              <li>[Item]</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Supplies</h3>
+            <ul>
+              <li>[Item]</li>
+              <li>[Item]</li>
+              <li>[Item]</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. POLICIES (Maybe) -->
+      <section class="policies">
+        <h2>[Equipment name] policies</h2>
+
+        <details>
+          <summary>[Policy topic, e.g. Safety gear]</summary>
+          <div class="policy-body">
+            <p>[Policy text.]</p>
+            <ul>
+              <li>[Rule]</li>
+              <li>[Rule]</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>[Policy topic, e.g. Cleanup]</summary>
+          <div class="policy-body">
+            <p>[Policy text.]</p>
+          </div>
+        </details>
+      </section>
+
+    </main>
+
+    <!-- Copy the footer from Template.html -->
+    <footer class="site-footer">
+      <p>
+        Materials: <strong>BTU LAB IS NOT A FREE SUPPLY STORE.</strong> But there are many ways to barter, including displaying your work in BTU, tagging us in social media, offering workshops, volunteering to organize supplies, and more. If you need something, we ask that you give something in return.
+      </p>
+      <p>
+        Note that this is not the official BTU website. This is a redesign project for CU Boulder's ATLS 2200 class.
+      </p>
+    </footer>
+
+    <!--
+      NOTES: swap these in for the badge (step 1) and the "Getting access" block (step 3).
+
+      Training by request:
+        <p class="badge">Training by request</p>
+        <p>[Say what the training covers, who to ask, and how long it takes.]</p>
+        <a class="button" href="mailto:atlasbtulab@gmail.com">Request training</a>
+
+      Open access:
+        <p class="badge">Open access</p>
+        <p>[Say that no training is needed, and mention any basic rules.]</p>
+        (no button)
+    -->
+  </body>
+</html>

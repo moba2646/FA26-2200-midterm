@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BTU Calendar</title>
+    <link rel="stylesheet" href="/Monty-Testing/style.css">
+
+    <style>
+
+
+      .hero {
+        display:grid;
+        place-items: center;
+        margin-top: 2rem;
+      }
+
+      .hero > * {
+        grid-area: 1 / 1;
+      }
+
+      .hero img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      .hero h1 {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        padding: 0 var(--spacing-md);
+        font-size: clamp(2rem, 7vw, 4rem);
+        text-align: center;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7,);
+      }
+
+        .calendar {
+    --border: clamp(0.5rem, 2vw, 1rem);
+    width: min(100%, 1000px);
+    margin: var(--spacing-xl) auto;
+    padding: var(--spacing-sm);
+    border-style: solid;
+    border-width: var(--border);
+    border-top-color: var(--color-primary);
+    border-left-color: var(--color-accent);
+    border-right-color: var(--color-highlight);
+    border-bottom-color: var(--color-secondary);
+  }
+  .calendar iframe {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    min-height: 450px;
+    border: 0;
+  }
+
+
+    </style>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-current="page">
+        <img src="../Assets/BTU-Logo.jpg" alt="" width="48" height="48" />
+        <span>ATLAS | BTU LAB</span>
+      </a>
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Menu" />
+  <label for="nav-toggle" class="nav-toggle"></label>
+
+  <nav class="nav" aria-label="Main">
+    <ul class="nav-list">
+      <li class="group-equipment">
+        <details name="nav-group">
+          <summary>Equipment</summary>
+          <ul class="dropdown">
+            <li><a href="Tools.html">Tools</a></li>
+            <li><a href="Wood-Shop.html">Wood Shop</a></li>
+            <li><a href="Sewing-Textiles.html">Sewing &amp; Textiles</a></li>
+            <li><a href="Electronics.html">Electronics</a></li>
+            <li><a href="Lasers.html">Lasers!</a></li>
+            <li><a href="3D-Printers.html">3D Printers</a></li>
+            <li><a href="CNC.html">CNC</a></li>
+          </ul>
+        </details>
+      </li>
+
+      <li class="group-community">
+        <details name="nav-group">
+          <summary>Community</summary>
+          <ul class="dropdown">
+            <li><a href="Mischief-Makers.html">BTU Mischief Makers</a></li>
+            <li><a href="Faculty.html">Faculty</a></li>
+            <li><a href="workshops.html">Workshops</a></li>
+            <li><a href="blow-things-up.html">Help Us Blow Things Up</a></li>
+          </ul>
+        </details>
+      </li>
+
+      <li class="group-visiting">
+        <details name="nav-group">
+          <summary>Visiting Info</summary>
+          <ul class="dropdown">
+            <li><a href="calendar.html">BTU Lab Calendar</a></li>
+            <li><a href="rules.html">Lab Rules &amp; Policies</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </nav>
+    </header>
+
+<main id="main">
+  <section class="hero">
+    <h1>BTU Lab Calendar</h1>
+    <img src="../Assets/BTU-Calendar.png" alt="Man holding an animal" />
+  </section>
+
+  <section class="calendar">
+    <iframe
+      title="BTU Lab Google Calendar"
+      src="https://calendar.google.com/calendar/u/0/embed?color=%2392e1c0&color=%23cd74e6&color=%23f83a22&color=%23fad165&src=01c19e46b7d1df63b8c2bf86c13e9e8d4dd48407953069b76258fa20a9f6e946@group.calendar.google.com&src=1d4bdcc88938abd2d291838c548916abba1d14f79ad53e49a62b76c16d0ce4fc@group.calendar.google.com&src=917af08c35085b7a6203c14ddcfb9a84b26f31030114e022d423518e82d442e3@group.calendar.google.com&src=atlasbtulab@gmail.com"
+    ></iframe>
+  </section>
+
+  <footer class="site-footer">
+    <p>
+      Materials: <strong>BTU LAB IS NOT A FREE SUPPLY STORE.</strong> But there are many ways to barter, including displaying your work in BTU, tagging us in social media, offering workshops, volunteering to organize supplies, and more. If you need something, we ask that you give something in return.
+    </p>
+    <p>
+      Note that this is not the official BTU website. This is a redesign project for CU Boulder's ATLS 2200 class.
+    </p>
+  </footer>
+</main>
+  </body>
+</html>
