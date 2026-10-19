@@ -578,7 +578,7 @@ address {
 .policies summary {
   display: flex;
   justify-content: space-between;
-  gap: var(--spacing-md);
+  /* gap: var(--spacing-md); */
   /* padding: var(--spacing-md) 0; */
   font-weight: 600;
   list-style: none;
@@ -587,6 +587,8 @@ address {
   border-bottom: solid var(--color-woodshop);
   border: solid var(--color-woodshop);
   margin: 0.25rem;
+  margin-top: 0.75rem;
+  padding-left: 0.25rem;
 }
 
 .policies summary::-webkit-details-marker { display: none; }
@@ -615,6 +617,10 @@ address {
 .policy-body ol { 
   padding-left: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+.policies-title {
+  margin-left: 10px;
 }
 
 

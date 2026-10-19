@@ -13,10 +13,10 @@
 
 :root {
   /* Color Palette - 5 Core Colors */
-  --color-primary: #2097c5;   /* BTU Blue - Main Brand Color */
+  --color-primary: #2097c5; /* BTU Blue - Main Brand Color */
   --color-secondary: #ed008c; /* ATLAS Pink - Complementary Action Color */
-  --color-accent: #e82030;    /* BTU Red - Highlight / Warning Color */
-  --color-neutral: #34495e;   /* Deep Slate Gray - Neutral Text and Background */
+  --color-accent: #e82030; /* BTU Red - Highlight / Warning Color */
+  --color-neutral: #34495e; /* Deep Slate Gray - Neutral Text and Background */
   --color-highlight: #f3d832; /* BTU Yellow - Accent / Attention Color */
 
   /* Derived Colors for Flexibility */
@@ -26,6 +26,7 @@
 
   /* Equipment Colors */
   --color-tools: #38761d;
+  --color-powertools: #00ff00;
   --color-woodshop: #e06666;
   --color-sewing: #f1c232;
   --color-electronics: #04b9d5;
@@ -34,11 +35,12 @@
   --color-CNC: #0000ff;
 
   /* Text-safe link colors (AA contrast on --color-background) */
-  --color-link: #ff5cb8;         /* light pink, about 5.6:1 */
+  --color-link: #ff5cb8; /* light pink, about 5.6:1 */
   --color-link-visited: #c3a6ff; /* light purple, about 7.6:1 */
 
   /* Typography */
-  --font-primary: "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-primary:
+    "Helvetica Neue", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-secondary: "Noto Serif", Serif;
 
   /* Spacing System */
@@ -135,7 +137,9 @@ h3 {
   color: var(--color-text-dark);
   text-decoration: none;
   border-radius: var(--radius-sm);
-  transition: background-color 0.3s ease, transform 0.2s;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s;
   border: 2px solid transparent;
 }
 .button:hover {
@@ -153,7 +157,9 @@ h3 {
 .link {
   color: var(--color-link);
   text-decoration: none;
-  transition: color 0.3s ease, text-decoration-color 0.3s;
+  transition:
+    color 0.3s ease,
+    text-decoration-color 0.3s;
 }
 .link:hover {
   color: var(--color-highlight);
@@ -177,11 +183,14 @@ h3 {
 
 @media (prefers-reduced-motion: reduce) {
   .button,
-  .link { transition: none; }
+  .link {
+    transition: none;
+  }
   .button:hover,
-  .button:active { transform: none; }
+  .button:active {
+    transform: none;
+  }
 }
-
 
 /* ---------- 2. PAGE LAYOUT, SKIP LINK, LINKS ---------- */
 
@@ -204,17 +213,26 @@ main {
 
 /* Body links (scoped so they don't override the nav) */
 main a,
-.site-footer a { color: var(--color-link); }
+.site-footer a {
+  color: var(--color-link);
+}
 main a:visited,
-.site-footer a:visited { color: var(--color-link-visited); }
+.site-footer a:visited {
+  color: var(--color-link-visited);
+}
 main a:hover,
-.site-footer a:hover { color: var(--color-highlight); }
+.site-footer a:hover {
+  color: var(--color-highlight);
+}
 
 /* Buttons inside body content keep their own colors */
 main a.button,
-main a.button:visited { color: var(--color-text-dark); }
-main a.button:hover { color: white; }
-
+main a.button:visited {
+  color: var(--color-text-dark);
+}
+main a.button:hover {
+  color: white;
+}
 
 /* ---------- 3. NAV BAR + HAMBURGER ---------- */
 
@@ -262,13 +280,18 @@ main a.button:hover { color: white; }
   border-radius: var(--radius-sm);
   cursor: pointer;
   background:
-    linear-gradient(var(--color-primary), var(--color-primary)) center 14px / 28px 4px no-repeat,
-    linear-gradient(var(--color-accent), var(--color-accent)) center 22px / 28px 4px no-repeat,
-    linear-gradient(var(--color-highlight), var(--color-highlight)) center 30px / 28px 4px no-repeat,
+    linear-gradient(var(--color-primary), var(--color-primary)) center 14px /
+      28px 4px no-repeat,
+    linear-gradient(var(--color-accent), var(--color-accent)) center 22px / 28px
+      4px no-repeat,
+    linear-gradient(var(--color-highlight), var(--color-highlight)) center
+      30px / 28px 4px no-repeat,
     transparent;
 }
 .nav-toggle:hover,
-.nav-toggle-input:checked + .nav-toggle { background-color: #333; }
+.nav-toggle-input:checked + .nav-toggle {
+  background-color: #333;
+}
 .nav-toggle-input:focus-visible + .nav-toggle {
   outline: 3px solid var(--color-highlight);
   outline-offset: -3px;
@@ -279,15 +302,25 @@ main a.button:hover { color: white; }
   display: none;
   flex-basis: 100%;
 }
-.nav-toggle-input:checked ~ .nav { display: block; }
+.nav-toggle-input:checked ~ .nav {
+  display: block;
+}
 
 .nav-list,
-.dropdown { list-style: none; }
+.dropdown {
+  list-style: none;
+}
 
 /* each group sets its own accent color */
-.group-equipment { --accent: var(--color-primary); }
-.group-community { --accent: var(--color-accent); }
-.group-visiting  { --accent: var(--color-highlight); }
+.group-equipment {
+  --accent: var(--color-primary);
+}
+.group-community {
+  --accent: var(--color-accent);
+}
+.group-visiting {
+  --accent: var(--color-highlight);
+}
 
 .nav summary,
 .nav .dropdown a {
@@ -301,19 +334,29 @@ main a.button:hover { color: white; }
   list-style: none;
   border-left: 6px solid var(--accent);
 }
-.nav summary::-webkit-details-marker { display: none; } /* Safari */
-.nav summary::after { content: " ▾"; }
-.nav details[open] > summary::after { content: " ▴"; }
+.nav summary::-webkit-details-marker {
+  display: none;
+} /* Safari */
+.nav summary::after {
+  content: " ▾";
+}
+.nav details[open] > summary::after {
+  content: " ▴";
+}
 
 .nav summary:hover,
 .nav details[open] > summary,
-.brand:hover { background: #333; }
+.brand:hover {
+  background: #333;
+}
 
 .dropdown {
   background: #1c1c1c;
   border-left: 6px solid var(--accent);
 }
-.nav .dropdown a { padding-left: 2rem; } /* indent children on phone */
+.nav .dropdown a {
+  padding-left: 2rem;
+} /* indent children on phone */
 .nav .dropdown a:hover {
   background: #333;
   box-shadow: inset 4px 0 0 var(--accent);
@@ -328,9 +371,13 @@ main a.button:hover { color: white; }
 
 /* Laptop: brand left, nav right, floating dropdowns, no hamburger */
 @media (min-width: 768px) {
-  .site-header { align-items: stretch; }
+  .site-header {
+    align-items: stretch;
+  }
   .nav-toggle,
-  .nav-toggle-input { display: none; }
+  .nav-toggle-input {
+    display: none;
+  }
   .nav {
     display: block;
     flex-basis: auto;
@@ -339,7 +386,9 @@ main a.button:hover { color: white; }
     display: flex;
     height: 100%;
   }
-  .nav-list > li { position: relative; }
+  .nav-list > li {
+    position: relative;
+  }
 
   .nav summary {
     height: 100%;
@@ -360,9 +409,10 @@ main a.button:hover { color: white; }
     border-top: 5px solid var(--accent);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   }
-  .nav .dropdown a { padding-left: 1.25rem; }
+  .nav .dropdown a {
+    padding-left: 1.25rem;
+  }
 }
-
 
 /* ---------- 4. HOME PAGE ---------- */
 
@@ -373,7 +423,9 @@ main a.button:hover { color: white; }
   border-radius: var(--radius-md);
 }
 
-.intro { margin-block: var(--spacing-xl); }
+.intro {
+  margin-block: var(--spacing-xl);
+}
 .intro p {
   font-size: 1.25rem;
   max-width: 65ch;
@@ -401,11 +453,21 @@ main h2 {
   text-transform: uppercase;
   color: var(--section-color, var(--color-primary));
 }
-.who   { --section-color: var(--color-primary); }
-.how   { --section-color: var(--color-accent); }
-.when  { --section-color: var(--color-highlight); }
-.what  { --section-color: var(--color-secondary); }
-.where { --section-color: var(--color-text-light); }
+.who {
+  --section-color: var(--color-primary);
+}
+.how {
+  --section-color: var(--color-accent);
+}
+.when {
+  --section-color: var(--color-highlight);
+}
+.what {
+  --section-color: var(--color-secondary);
+}
+.where {
+  --section-color: var(--color-text-light);
+}
 
 address {
   font-style: normal;
@@ -418,16 +480,19 @@ address {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
   }
-  .feature--flip img { order: 2; }
+  .feature--flip img {
+    order: 2;
+  }
 }
-
 
 /* ---------- 5. EQUIPMENT PAGES ---------- */
 
 /* Theme: sets the page accent color. Band text is white unless a theme
    sets --band-text (light bands use dark text), so re-check contrast
    before adding a new band color. */
-.theme-equipment { --page-accent: var(--color-primary); }
+.theme-equipment {
+  --page-accent: var(--color-primary);
+}
 
 /* Per-page themes: put ONE on the page's <main> (instead of theme-equipment).
    --band = title band color, --page-accent = headings, borders, bullets.
@@ -462,7 +527,8 @@ address {
 }
 .theme-cnc {
   --band: var(--color-CNC);
-  --page-accent: color-mix(in srgb, var(--color-CNC) 60%, white);
+  /* --page-accent: color-mix(in srgb, var(--color-CNC) 60%, white); */
+  --page-accent: var(--color-CNC);
 }
 
 .equip-hero {
@@ -470,7 +536,9 @@ address {
   height: auto;
 }
 @media (min-width: 768px) {
-  .equip-hero { max-width: 50%; }
+  .equip-hero {
+    max-width: 50%;
+  }
 }
 
 /* Smaller, sentence-case headings than the home page */
@@ -486,7 +554,9 @@ address {
   font-size: 1.25rem;
   color: var(--color-text-light);
 }
-.equip-page section { margin-block: var(--spacing-xl); }
+.equip-page section {
+  margin-block: var(--spacing-xl);
+}
 
 /* Colored title band: one shared layout, one color per equipment page */
 .page-band {
@@ -556,7 +626,9 @@ address {
   border-radius: var(--radius-md);
   box-shadow: inset 0 4px 0 var(--page-accent);
 }
-.card h3 { margin-top: var(--spacing-sm); }
+.card h3 {
+  margin-top: var(--spacing-sm);
+}
 .card ul {
   padding-left: 1.25rem;
   columns: 10rem; /* long lists flow into columns when there's room */
@@ -566,15 +638,23 @@ address {
   break-inside: avoid;
   margin-bottom: var(--spacing-xs);
 }
-.card li::marker { color: var(--page-accent); }
+.card li::marker {
+  color: var(--page-accent);
+}
 
 @media (min-width: 768px) {
-  .card-grid--2 { grid-template-columns: repeat(2, 1fr); }
-  .card-grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .card-grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Policies accordion (Wood Shop, etc.) */
-.policies details { border-bottom: 1px solid #444; }
+.policies details {
+  border-bottom: 1px solid #444;
+}
 .policies summary {
   display: flex;
   justify-content: space-between;
@@ -589,7 +669,9 @@ address {
   margin: 0.25rem;
 }
 
-.policies summary::-webkit-details-marker { display: none; }
+.policies summary::-webkit-details-marker {
+  display: none;
+}
 .policies summary::after {
   content: "+";
   font-size: 1.5rem;
@@ -597,7 +679,9 @@ address {
   color: var(--page-accent);
   padding-right: var(--spacing-lg);
 }
-.policies details[open] > summary::after { content: "−"; }
+.policies details[open] > summary::after {
+  content: "−";
+}
 .policies summary:focus-visible {
   outline: 3px solid var(--color-highlight);
   outline-offset: 2px;
@@ -606,17 +690,18 @@ address {
   /* max-width: 65ch; */
   padding-bottom: var(--spacing-md);
 }
-.policy-body > * + * { margin-top: var(--spacing-sm); }
-.policy-body ul { 
-  padding-left: 1.25rem; 
-  padding-bottom: 1.25rem;;
+.policy-body > * + * {
+  margin-top: var(--spacing-sm);
 }
-
-.policy-body ol { 
+.policy-body ul {
   padding-left: 1.25rem;
   padding-bottom: 1.25rem;
 }
 
+.policy-body ol {
+  padding-left: 1.25rem;
+  padding-bottom: 1.25rem;
+}
 
 /* ---------- 6. RULES PAGE ---------- */
 
@@ -624,7 +709,6 @@ address {
   list-style: circle;
   padding-left: 1.5rem;
 }
-
 
 /* ---------- 7. FOOTER ---------- */
 
@@ -634,11 +718,14 @@ address {
   background: #111;
   border-top: 5px solid;
   border-image: linear-gradient(
-    to right,
-    var(--color-primary) 33.3%,
-    var(--color-accent) 33.3% 66.6%,
-    var(--color-highlight) 66.6%
-  ) 1;
+      to right,
+      var(--color-primary) 33.3%,
+      var(--color-accent) 33.3% 66.6%,
+      var(--color-highlight) 66.6%
+    )
+    1;
   font-size: 0.9375rem;
 }
-.site-footer p + p { margin-top: var(--spacing-md); }
+.site-footer p + p {
+  margin-top: var(--spacing-md);
+}
