@@ -369,7 +369,7 @@ main a.button:hover {
   outline-offset: -3px;
 }
 
-/* Laptop: brand left, nav right, floating dropdowns, no hamburger */
+/* Laptop */
 @media (min-width: 768px) {
   .site-header {
     align-items: stretch;
