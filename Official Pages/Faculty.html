@@ -6,7 +6,109 @@
     <title>Faculty</title>
 
  <style>
-      /* Page-specific CSS goes here */
+      .faculty-intro {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        align-items: start;
+        margin-block: 2rem;
+        padding: 1.5rem;
+        background: #1c1c1c;
+        border-radius: 12px;
+      }
+
+      .faculty-intro img {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin-inline: auto;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      /* Wide screens: image on the left, text on the right */
+    @media (min-width: 768px) {
+        .faculty-intro {
+            grid-template-columns: minmax(200px, 1fr) 2fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .faculty-intro img {
+            max-width: 100%;
+        }
+    }    
+    /* Resource introduction */
+    .resource-intro {
+      margin-block: 3rem 2rem;
+      padding: 1.5rem;
+      background: #1c1c1c;
+      border-radius: 12px;
+    }
+
+    .resource-intro h2 {
+      margin-top: 0;
+      margin-bottom: 1.25rem;
+    }
+
+    .resource-intro p {
+      margin-block: 0.75rem;
+      line-height: 1.6;
+    }
+
+/* Four resource cards */
+.resource-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-block: 2rem 3rem;
+}
+
+/* Individual resource card */
+.resource-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.25rem;
+  background: #1c1c1c;
+  border-radius: 12px;
+}
+
+/* Resource images */
+.resource-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Resource headings */
+.resource-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+/* Resource descriptions */
+.resource-card p {
+  line-height: 1.6;
+  margin-block: 0.5rem;
+}
+
+/* Four columns on wider screens */
+@media (min-width: 768px) {
+.resource-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.resource-card {
+  padding: 1rem;
+}
+
+}
     </style>
 
 <link rel="icon" type="image/jpeg" href="../Assets/BTU-Logo.jpg">
@@ -69,44 +171,165 @@
     </header> <main id="main">
     
     <h1>Faculty</h1>
-    <h2>Welcome, and welcome back.</h2>
-    <p>The BTU Lab exists to facilitate as much student, faculty and staff coursework, research and experimentation as possible. We support as many as 7000 coursework hours per semester.
-        Because of this incredible demand, expectations for students, including yours, and faculty are covered in a series of brief, mandatory, one-time orientations.
-        In addition, for faculty, this page is set up to help you identify needs for yourself and your students and to direct you to the necessary next steps for the our collective success.
-        As always, if you have any questions please contact me at "zack.weaver@colorado.edu". Welcome, and welcome back, to the ATLAS Institute and the BTU Lab.</p>
+  <section class="faculty-intro">
+    <img src="..//Assets/faculty1.jpg"
+          alt="Portrait of BTU Lab Faculty"
+          width="400"
+          height="400"
+    />
+    <div class="faculty-info">
+      <h2>Welcome, and welcome back.</h2>
+      <p>The BTU Lab exists to facilitate as much student, faculty and staff coursework, research and experimentation as possible. We support as many as 7000 coursework hours per semester.</p>
+      <p>Because of this incredible demand, expectations for students, including yours, and faculty are covered in a series of brief, mandatory, one-time orientations.</p>
+      <p>In addition, for faculty, this page is set up to help you identify needs for yourself and your students and to direct you to the necessary next steps for the our collective success.</p>
+      <p>As always, if you have any questions please contact me at "zack.weaver@colorado.edu". Welcome, and welcome back, to the ATLAS Institute and the BTU Lab.</p>
         
-    <h3>- Zack Weaver,
+      <h3>- Zack Weaver,
           Assistant Teaching Professor, ATLAS Institute
           Director, BTU Lab </h3>
+    </div>
+  </section>
 
-    <h2> RESOURCES TO HELP YOU GET STARTED:</h2>
-    <p>TEACHING AN UPCOMING CLASS* using the BTU Lab?  Please, fill out this very brief <a href="https://docs.google.com/forms/d/1EM2bvU05i7BzLkEm7eHTq8aEpI9dHv45DBDmNFxuSaQ/edit">FORM</a>. (*Required every semester)</p>
-    <p>NEED TO KNOW MORE about specific resources for your class?  Follow the links below. </p>
+  <section class="resource-intro">
+    <h2>RESOURCES TO HELP YOU GET STARTED</h2>
+
+    <p>
+        <strong>TEACHING AN UPCOMING CLASS?</strong>
+        Using the BTU Lab? Please fill out this very brief
+        <a href="https://docs.google.com/forms/d/1EM2bvU05i7BzLkEm7eHTq8aEpI9dHv45DBDmNFxuSaQ/edit">FORM</a>.
+        <em>(Required every semester.)</em>
+    </p>
+
+    <p>
+        <strong>NEED TO KNOW MORE?</strong>
+        Explore the resources below for information about specific equipment,
+        access requirements, orientations, and support for your class.
+    </p>
+
+  </section>
+
+    <div class="resource-grid">
+
+<!-- Laser Cutting -->
+<section class="resource-card">
+    <img
+        src="../Assets/laser-cutting.jpg"
+        alt="Horse shooting lasers out of its eyes"
+        width="400"
+        height="400"
+    />
 
     <h2>LASER CUTTING</h2>
-    <p>Laser cutter access requires a one-time orientation. The schedule for this, and all BTU events can be found on the CALENDAR page of the BTU website.
-    Additional support for students is explained on the <a href="Lasers.html">LASERS</a>  page of the BTU website.
-    Instructional requirements for faculty needing laser cutters can be found <a href="https://docs.google.com/document/d/1dWVOIj-H-YHcdXn-rslzCT1NLkQhLLtD6T0r8dxhTJQ/edit">HERE</a> HERE!</p>
+
+    <p>
+        Laser cutter access requires a one-time orientation.
+        The schedule for this, and all BTU events, can be found on the
+        <a href="calendar.html">CALENDAR</a> page of the BTU website.
+    </p>
+
+    <p>
+        Additional support for students is explained on the
+        <a href="Lasers.html">LASERS</a> page of the BTU website.
+    </p>
+
+    <p>
+        Instructional requirements for faculty needing laser cutters
+        can be found
+        <a href="https://docs.google.com/document/d/1dWVOIj-H-YHcdXn-rslzCT1NLkQhLLtD6T0r8dxhTJQ/edit">HERE</a>.
+    </p>
+</section>
+
+<!-- 3D Printing -->
+<section class="resource-card">
+    <img
+        src="../Assets/3d-printing.jpg"
+        alt="3D-printed cat"
+        width="400"
+        height="400"
+    />
 
     <h2>3D PRINTING</h2>
-    <p>3D Printing access requires a one-time, 10-15 minute orientation for all users. This orientation can be scheduled for individuals or classes, upon request.
-    To learn about available resources or to request an orientation, please visit the <a href="3D-Printers.html">3D PRINTING</a>  page of the BTU website.
-    Instructional requirements for faculty needing 3D printers can be found  <a href="https://docs.google.com/document/d/1dWVOIj-H-YHcdXn-rslzCT1NLkQhLLtD6T0r8dxhTJQ/edit">HERE</a> HERE!</p>
+
+    <p>
+        3D printing access requires a one-time, 10-15 minute orientation
+        for all users. This orientation can be scheduled for individuals
+        or classes upon request.
+    </p>
+
+    <p>
+        To learn about available resources or request an orientation,
+        visit the
+        <a href="3D-Printers.html">3D PRINTING</a> page of the BTU website.
+    </p>
+
+    <p>
+        Instructional requirements for faculty needing 3D printers
+        can be found
+        <a href="https://docs.google.com/document/d/1dWVOIj-H-YHcdXn-rslzCT1NLkQhLLtD6T0r8dxhTJQ/edit">HERE</a>.
+    </p>
+</section>
+
+<!-- Wood Shop -->
+<section class="resource-card">
+    <img
+        src="../Assets/wood-shop.png"
+        alt="Wood being cut"
+        width="400"
+        height="400"
+    />
 
     <h2>WOOD SHOP</h2>
-    <p>Wood shop access requires a one-time orientation regardless of past experience. The schedule for this and all BTU events can be found on the <a href="calendar.html">CALENDAR</a> page of the BTU website.</p>
-    <p>Additional information about wood shop tools and policies can be found on the <a href="Wood-Shop.html">WOOD SHOP</a> page of the BTU website.</p>
-    <p>Instructional requirements for faculty needing the wood shop can be found <a href="https://docs.google.com/document/d/1dWVOIj-H-YHcdXn-rslzCT1NLkQhLLtD6T0r8dxhTJQ/edit">HERE</a>!</p>
+
+    <p>
+        Wood shop access requires a one-time orientation regardless
+        of past experience. The schedule for this and all BTU events
+        can be found on the
+        <a href="calendar.html">CALENDAR</a> page of the BTU website.
+    </p>
+
+    <p>
+        Additional information about wood shop tools and policies can
+        be found on the
+        <a href="Wood-Shop.html">WOOD SHOP</a> page of the BTU website.
+    </p>
+
+    <p>
+        Instructional requirements for faculty needing the wood shop
+        can be found
+        <a href="https://docs.google.com/document/d/1dWVOIj-H-YHcdXn-rslzCT1NLkQhLLtD6T0r8dxhTJQ/edit">HERE</a>.
+    </p>
+</section>
+
+<!-- Other Resources -->
+<section class="resource-card">
+    <img
+        src="../Assets/other-resources.jpg"
+        alt="Pride flag displayed over student faces"
+        width="400"
+        height="400"
+    />
 
     <h2>OTHER RESOURCES</h2>
-    <p>BTU has many additional resources, which are explained on the BTU WEBSITE, as well as requirements for any training you might need.</p>
-    <p>Support is also provided by BTU's amazing student staff, the BTU MISCHIEF MAKERS!</p>
-    <p>Each of them offer instructional support in many topics, listed on the Mischief Makers page, along with their contact information.</p>
-    <p>NEED MORE HELP from staff? Below is the regular schedule and contact information for the current semester.</p>
-    <h3>Pending...</h3>
-    <p>WE LOVE SEEING WHAT YOU MAKE POSSIBLE in the BTU Lab.</p>
-    <p>You and your students can help us out by following and tagging your RAD projects on Instagram, @btulab_cu.</p>
 
+    <p>
+        BTU has many additional resources, which are explained on the
+        BTU website, along with requirements for any training you might need.
+    </p>
+
+    <p>
+        Support is also provided by BTU's amazing student staff,
+        the BTU MISCHIEF MAKERS!
+    </p>
+
+    <p>
+        Each of them offers instructional support in many topics,
+        listed on the
+        <a href="Mischief-Makers.html">MISCHIEF MAKERS</a> page,
+        along with their contact information.
+    </p>
+</section>
+
+</div>
 <footer class="site-footer">
         <p>
           Materials: <strong>BTU LAB IS NOT A FREE SUPPLY STORE.</strong> But there are many ways to barter, including displaying your work in BTU, tagging us in social media, offering workshops, volunteering to organize supplies, and more. If you need something, we ask that you give something in return.
