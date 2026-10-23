@@ -242,9 +242,12 @@ main a.button:hover {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+  /* position: relative; */
   background: #111;
   color: var(--color-text-light);
+  position:sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .brand {
