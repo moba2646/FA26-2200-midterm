@@ -617,7 +617,7 @@ address {
   margin-bottom: var(--spacing-md);
 }
 
-/* Cards: "Who can use it" and "Equipment / Supplies" */
+
 .card-grid {
   display: grid;
   gap: var(--spacing-md);
@@ -634,7 +634,7 @@ address {
 }
 .card ul {
   padding-left: 1.25rem;
-  columns: 10rem; /* long lists flow into columns when there's room */
+  columns: 10rem; 
   column-gap: var(--spacing-lg);
 }
 .card li {
@@ -643,6 +643,76 @@ address {
 }
 .card li::marker {
   color: var(--page-accent);
+}
+
+
+.card ol {
+  padding-left: 1.5rem;
+}
+.card ol li {
+  margin-bottom: var(--spacing-sm);
+}
+.card ol li::marker {
+  font-weight: 700;
+}
+
+/* Mostly for Lazor Wizards */
+.card--split {
+  display: grid;
+  gap: var(--spacing-lg);
+  align-items: start;           /* text lines up with the top of the image */
+}
+.card--split h3 {
+  margin-top: 0;                /* no extra gap above the first line */
+}
+.card--split img {
+  width: 100%;
+  max-width: 260px;             /* smaller image, shorter card */
+  max-height: 320px;
+  object-fit: contain;
+  justify-self: center;
+}
+.card .emails {
+  overflow-wrap: anywhere;
+}
+
+/* .wizards {
+  display: flex;
+  flex-wrap: wrap;
+
+} */
+
+@media (min-width: 768px) {
+  .card--split {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 260px);
+    column-gap: var(--spacing-xl);
+  }
+  .card--split img {
+    justify-self: end;
+  }
+}
+/* Lazor Wizards end */
+
+
+/* Tools Equipment section fix */
+
+/* One full-width card with its lists side by side */
+.card--wide {
+  display: grid;
+  gap: var(--spacing-md);
+}
+.card--wide h3 {
+  grid-column: 1 / -1;   /* heading spans all columns */
+}
+.card--wide ul {
+  columns: auto;         /* cancels the multi-column flow from .card ul */
+}
+
+@media (min-width: 768px) {
+  .card--wide {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: var(--spacing-xl);
+  }
 }
 
 @media (min-width: 768px) {
