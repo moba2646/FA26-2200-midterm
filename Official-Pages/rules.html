@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-  /* ---------- Hero: image with centered title ---------- */
       .hero {
         display: grid;
         place-items: center;
@@ -22,6 +21,7 @@
         height: clamp(200px, 40vw, 420px);
         object-fit: cover;
         filter: brightness(0.6);
+        opacity: 70%;
       }
       .hero h1 {
         position: relative;
@@ -35,14 +35,30 @@
  
       /* ---------- Rules ---------- */
       .rules { max-width: 75rem; margin-inline: auto; }
-      .rules > h2 { font-size: clamp(2rem, 6vw, 3rem); text-transform: uppercase; color:white; }
+      .rules > h2 { font-size: 3.5rem; text-transform: uppercase; color:white; text-align: center; }
       .rules > p { max-width: 60ch; margin-bottom: var(--spacing-xl); color: #ddd; }
  
-      .rule-groups {
+      /* .rule-groups {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
         gap: var(--spacing-lg);
+      } */
+
+      .rule-groups {
+        display: grid;
+        grid-template-columns: 1;
+        gap: var(--spacing-lg);
       }
+
+      @media (min-width: 768px){
+        .rule-groups {grid-template-columns: repeat(2, 1fr);}
+      }
+
+      @media (min-width: 1040px){
+        .rule-groups {grid-template-columns: repeat(3, 1fr);}
+      }
+
+
       .rule-group {
         padding: var(--spacing-lg);
         background: #1c1c1c;
@@ -59,13 +75,26 @@
       .cleanup { --group: var(--color-highlight); }
       .stuff   { --group: var(--color-secondary); }
  
-      .closing {
+      /* .closing {
         margin-top: var(--spacing-xl);
         padding: var(--spacing-lg);
         border-left: 6px solid var(--color-highlight);
         background: #1c1c1c;
         font-size: 1.125rem;
         max-width: 65ch;
+      } */
+
+      .closing {
+        grid-column: 1 / -1;                  
+        display: flex;
+        align-items: center;                      
+        padding: var(--spacing-lg);
+        border-left: 6px solid var(--color-highlight);
+        background: #1c1c1c;
+        font-size: 1.125rem;
+      }
+      @media (min-width: 1040px) {
+        .closing { grid-column: 2 / -1; }         
       }
     </style>
   </head>
@@ -131,8 +160,8 @@
       </section>
  
       <section class="rules">
-        <h1>BE COOL*</h1>
-        <h2>*Ways to be COOL.</h2>
+        <h2>BE COOL*</h2>
+        <h2>*Ways to be COOL:</h2>
  
         <div class="rule-groups">
           <section class="rule-group respect">
@@ -173,11 +202,13 @@
               <li>First ask approval to remove any tool or material from the lab.</li>
             </ul>
           </section>
+
+          <p class="closing">Leave out anything else, not listed here, that negatively affects the BTU, ATLAS, CU, and EARTH community. Please, do not make us make a rule.</p>
         </div>
  
-        <p class="closing">Leave out anything else, not listed here, that negatively affects the BTU, ATLAS, CU, and EARTH community. Please, do not make us make a rule.</p>
+        <!-- <p class="closing">Leave out anything else, not listed here, that negatively affects the BTU, ATLAS, CU, and EARTH community. Please, do not make us make a rule.</p> -->
       </section>
-
+ </main>
       <footer class="site-footer">
         <p>
           Materials: <strong>BTU LAB IS NOT A FREE SUPPLY STORE.</strong> But there are many ways to barter, including displaying your work in BTU, tagging us in social media, offering workshops, volunteering to organize supplies, and more. If you need something, we ask that you give something in return.
@@ -186,5 +217,4 @@
           Note that this is not the official BTU website. This is a redesign project for CU Boulder's ATLS 2200 class.
         </p>
       </footer>
-    </main>
     </body>
