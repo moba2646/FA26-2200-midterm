@@ -454,7 +454,6 @@ main a.button:hover {
 }
 .intro p {
   font-size: 1.25rem;
-  max-width: 65ch;
 }
 
 /* Phone: image on top, text below */
@@ -470,7 +469,6 @@ main a.button:hover {
 }
 .feature p {
   font-size: 1.125rem;
-  max-width: 60ch;
 }
 
 /* Section headings: one rule, color set per section */
@@ -559,11 +557,13 @@ address {
 
 .equip-hero {
   max-width: 100%;
+  margin-inline: auto;
   height: auto;
 }
 @media (min-width: 768px) {
   .equip-hero {
     max-width: 50%;
+    margin-inline: auto;
   }
 }
 
@@ -636,6 +636,7 @@ address {
 }
 .access p {
   max-width: 60ch;
+  margin-inline: auto;
   font-size: 1.125rem;
   margin-bottom: var(--spacing-md);
 }
@@ -690,8 +691,10 @@ address {
 }
 .card--split img {
   width: 100%;
-  max-width: 260px;             /* smaller image, shorter card */
+  max-width: 260px; 
+  margin-inline: auto;            /* smaller image, shorter card */
   max-height: 320px;
+  margin-inline: auto;
   object-fit: contain;
   justify-self: center;
 }
