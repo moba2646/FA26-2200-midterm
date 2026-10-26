@@ -872,3 +872,17 @@ h1 {
   text-shadow: 0 2px 8px black;
 }
 
+@keyframes boom {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.boom-gif {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+}
+
+ .pop-photo, .shake-page main { animation: none; }
+  .boom-gif { display: none; }
