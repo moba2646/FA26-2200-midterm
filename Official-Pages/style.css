@@ -888,3 +888,7 @@ address {
   main {
   overflow-x: clip;
 }
+/* equipment pages: text uses the full width */
+.equip-page .feature {
+  grid-template-columns: 1fr;
+}
