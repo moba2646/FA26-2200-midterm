@@ -802,3 +802,21 @@ address {
 .site-footer p + p {
   margin-top: var(--spacing-md);
 }
+
+/*This is the css for the fading pages*/
+.fade-photo {
+  width: 100%;
+  height: clamp(220px, 40vw, 480px);
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+/* home page only: pops in */
+.pop-photo {
+  animation: boom 0.6s;
+}
+
+/* centering the title on every screen size */
+h1 {
+  text-align: center;
+}
