@@ -315,6 +315,9 @@ main a.button:hover {
 }
 
 /* each group sets its own accent color */
+.group-home {
+    --accent: var(--color-neutral);
+}
 .group-equipment {
   --accent: var(--color-primary);
 }
@@ -326,9 +329,10 @@ main a.button:hover {
 }
 
 .nav summary,
-.nav .dropdown a {
+.nav .dropdown a,
+.nav-list > li > a {
   display: block;
-  padding: 0.9rem 1.25rem; /* 44px+ touch targets */
+  padding: 0.9rem 1.25rem;
   color: var(--color-text-light);
   text-decoration: none;
   cursor: pointer;
@@ -349,6 +353,7 @@ main a.button:hover {
 
 .nav summary:hover,
 .nav details[open] > summary,
+.nav-list > li > a:hover,
 .brand:hover {
   background: #333;
 }
@@ -372,6 +377,14 @@ main a.button:hover {
   outline-offset: -3px;
 }
 
+
+/* Phone Home button accent color */
+@media (max-width: 767px) {
+  .nav-list > li > a {
+    border-left: 6px solid var(--accent);
+  }
+}
+
 /* Laptop */
 @media (min-width: 768px) {
   .site-header {
@@ -392,6 +405,14 @@ main a.button:hover {
   .nav-list > li {
     position: relative;
   }
+
+  .nav-list > li > a {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  border-top: 5px solid var(--accent);
+  padding: 0.9rem 1.5rem;
+}
 
   .nav summary {
     height: 100%;
