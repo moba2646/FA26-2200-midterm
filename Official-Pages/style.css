@@ -820,3 +820,17 @@ address {
 h1 {
   text-align: center;
 }
+
+/* shake, home page only */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+.shake-page main {
+  animation: shake 0.3s 0.5s;
+  overflow-x: hidden;
+}
