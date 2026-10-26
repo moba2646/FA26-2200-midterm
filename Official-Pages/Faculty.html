@@ -30,7 +30,7 @@
       /* Wide screens: image on the left, text on the right */
     @media (min-width: 768px) {
         .faculty-intro {
-            grid-template-columns: minmax(200px, 1fr) 2fr;
+            grid-template-columns: 1fr;
             gap: 2rem;
             align-items: start;
         }
@@ -109,11 +109,16 @@
 }
 
 }
+
+.fade-photo {
+        object-position: top;
+      }
+      
     </style>
 
 <link rel="icon" type="image/jpeg" href="../Assets/BTU-Logo.jpg">
 <link rel="stylesheet" href="style.css">
-
+<script src="script.js" defer></script>
 </head>
 <body>
 
@@ -173,15 +178,12 @@
       </li>
     </ul>
   </nav>
-    </header> <main id="main">
+    </header> 
     
+    <main id="main">
+    <img class="fade-photo" src="../Assets/faculty1.jpg" alt="BTU Lab faculty">
     <h1>Faculty</h1>
   <section class="faculty-intro">
-    <img src="..//Assets/faculty1.jpg"
-          alt="Portrait of BTU Lab Faculty"
-          width="400"
-          height="400"
-    />
     <div class="faculty-info">
       <h2>Welcome, and welcome back.</h2>
       <p>The BTU Lab exists to facilitate as much student, faculty and staff coursework, research and experimentation as possible. We support as many as 7000 coursework hours per semester.</p>
