@@ -1,0 +1,42 @@
+/* picture POP*/
+.pop-photo {
+  width: 100%;
+  height: clamp(220px, 40vw, 480px);
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  animation: boom 0.6s;
+}
+
+@keyframes boom {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* shake, for the blow up page? */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+.shake-page main {
+  animation: shake 0.3s 0.5s;
+  overflow-x: hidden;
+}
+
+/* slowing down the shaking */
+@media (prefers-reduced-motion: reduce) {
+  .pop-photo, .shake-page main { animation: none; }
+}
+
+/* height*/
+main {
+  min-height: 200vh;
+}
+/* centering the title on every screen size */
+h1 {
+  text-align: center;
+}
